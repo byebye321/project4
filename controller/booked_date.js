@@ -7,5 +7,5 @@ function getallParent (req, res){
 }
 
 module.exports = {
-  index: getallParent
+  index: getallBookeddate
 }
