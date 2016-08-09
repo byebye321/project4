@@ -4,10 +4,10 @@ const ParentSchema = mongoose.Schema ({
   username: {type: String, required: true},
   password: {type: String, required: true},
   email: {type: String, required: true},
-  aboutme: {type: String, required: true},
+  aboutme: {type: String},
   joindate: {type: Date, default: Date.now},
-  address: {type: String, required: true},
-  no_ofchildren: {type: Number, required: true},
-  childrenage: {type: Number, required: true}
+  address: {type: String},
+  no_ofchildren: {type: Number},
+  childrenage: {type: Number}
 })
 module.exports = mongoose.model('Parent', ParentSchema)
