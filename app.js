@@ -6,6 +6,8 @@ const routes = require('./routes/index')
 
 app.use('/', routes)
 
+mongoose.connect('mongodb://pokemon:<dbpassword>@ds145365.mlab.com:45365/sitter')
+
 app.listen(port, ()=>{
   console.log(`listening to port ${port}`)
 })

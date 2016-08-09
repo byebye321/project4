@@ -6,6 +6,13 @@ function getallSitter (req, res){
   })
 }
 
+function getOneSitter (req, res){
+  Sitter.findOne({_id: req.params.id}, function(err, sitter){
+    res.status(200).json(sitter)
+  })
+}
+
 module.exports = {
-  index: getallSitter
+  index: getallSitter,
+  show: getOneSitter
 }
