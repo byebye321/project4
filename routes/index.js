@@ -18,8 +18,13 @@ router.post('/sitter/book/:id', sitterController.book)
 //
 // router.post()
 
-
-
 router.get('/sitter/:id', sitterController.show)
+
+router.post('/login/sitter', sitterController.login)
+router.post('/login/parent', parentController.login)
+
+router.post('/signup/sitter', sitterController.signUp)
+router.post('/signup/parent', parentController.signUp)
+
 
 module.exports = router
