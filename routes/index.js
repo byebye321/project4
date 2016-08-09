@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const parent_controller = require('../controller/parent_controller')
-const sitter_controller = require('../controller/sitter_controller')
+const parentController = require('../controller/parent_controller')
+const sitterController = require('../controller/sitter_controller')
 const booked_date = require('../controller/booked_date')
 
 // router.get('/', bookeddateController.index)
@@ -10,7 +10,11 @@ const booked_date = require('../controller/booked_date')
 
 // router.get('/parent/:id', parentController.show)
 //
-// router.get('/sitter', sitterController.index)
+router.get('/parent', parentController.index)
+
+router.get('/sitter', sitterController.index)
+
+router.post('/sitter/book/:id', sitterController.book)
 //
 // router.post()
 

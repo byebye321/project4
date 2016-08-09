@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
 const BookedDateSchema = mongoose.Schema ({
-  sitter_id: {type: String, required: true},
-  parent_id: {type: String, required: true},
-  bookeddate: {type: String, required: true},
-  bookedtime: {type: String, required: true}
+  sitter_id: {type: mongoose.Schema.Types.ObjectId, required: true},
+  parent_id: {type: mongoose.Schema.Types.ObjectId, required: true},
+  bookeddate: {type: Date, required: true}
 })
 module.exports = mongoose.model('BookedDate', BookedDateSchema)

@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/byebye321/project4/issues"
   },
-  "homepage": "https://github.com/byebye321/project4#readme"
+  "homepage": "https://github.com/byebye321/project4#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.8",
+    "mongoose-seed": "^0.3.0"
+  }
 }
