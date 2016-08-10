@@ -17,6 +17,10 @@ router.get('/sitter', sitterController.index)
 //at sitter's profile page and clicking book a session
 router.post('/sitter/book/:id', sitterController.book)
 //shows individual sitter profile
+
+router.get('/sitter/available', sitterController.availability)
+//get list of sitters available
+
 router.get('/sitter/:id', sitterController.show)
 //login for sitters and parents
 router.post('/login/sitter', sitterController.login)

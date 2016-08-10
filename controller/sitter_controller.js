@@ -45,6 +45,31 @@ function signupSitter (req, res) {
 	})
 }
 
+function getSitterAvailability (req, res) {
+
+	//find a list of booking at that date
+	BookedDate.find({bookeddate: req.query.date}, function(err, bookings){
+
+		//list of sitter will contain the list of sitter id booked during this date
+		var listOfSitter = [];
+		bookings.forEach(function(booking) {
+			listOfSitter.push(booking.sitter_id);
+		})
+
+		//get all the sitters
+		Sitter.find((err, sitters) => {
+
+			//filtered sitter will contain sitters that aren't booked at this date
+			filteredSitters = sitters.filter(function(sitter) {
+				return listOfSitter.indexOf(sitter._id) > 0;
+			})
+
+			res.status(200).json({sitters: filteredSitters})
+		})
+	})
+}
+
+
 module.exports = {
   index: getallSitter,
   show: getOneSitter,
