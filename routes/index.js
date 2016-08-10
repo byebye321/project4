@@ -13,15 +13,18 @@ const booked_date = require('../controller/booked_date')
 
 router.get('/parent', parentController.index)
 //loads next the page of all sitters and calendar when "find a sitter" is clicked
+router.get('/sitter/available', sitterController.availability)
+//get list of sitters available
+
+
+router.get('/sitter/:id', sitterController.show)
 router.get('/sitter', sitterController.index)
 //at sitter's profile page and clicking book a session
 router.post('/sitter/book/:id', sitterController.book)
 //shows individual sitter profile
 
-router.get('/sitter/available', sitterController.availability)
-//get list of sitters available
 
-router.get('/sitter/:id', sitterController.show)
+
 //login for sitters and parents
 router.post('/login/sitter', sitterController.login)
 router.post('/login/parent', parentController.login)
