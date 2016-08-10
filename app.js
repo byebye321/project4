@@ -5,6 +5,8 @@ const port = process.env.PORT || 3000
 const routes = require('./routes/index')
 const bodyParser = require('body-parser')
 
+app.use('/frontend', express.static('public'))
+//serve files from public folder when you go to /frontend routes
 app.use(bodyParser.json())
 app.use('/', routes)
 
