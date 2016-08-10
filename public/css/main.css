@@ -1,0 +1,69 @@
+.darkblue 	{ color: #272663; }
+.offwhite 	{ color: #ECECF6; }
+.yellow 		{ color: #FBDD83; }
+.lilac 			{ color: #A9A3D0; }
+.coral 			{ color: #EA7972; }
+.lightbeige { color: #F6DFD4; }
+.beige 			{ color: #CBA08E; }
+
+.hello {
+  width: 10px;
+  height: 10px;
+}
+
+.row {
+  height: 1200px;
+  display: flex;
+}
+
+.left {
+  background: #A9A3D0;
+  color:#272663;
+  font-family: 'Rubik', sans-serif;
+  font-size: 60px;
+  position: absolute-left;
+  width: 50%;
+  height: 1200px;
+  flex-direction: row;
+
+}
+
+.right {
+  background: #ECECF6;
+  color:#EA7972;
+  font-size: 60px;
+  font-family: 'Rubik', sans-serif;
+  position: absolute-right;
+  width: 50%;
+  height: 1200px;
+  flex-direction: row;
+}
+
+/*#button1{
+  background-color: #ECECF6;
+  color: black;
+  font-family: 'Rubik', sans-serif;
+  border: 1px solid white;
+  font-size: 10px;
+*/}
+
+#button2{
+  background-color: #A9A3D0;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  border: 1px solid grey;
+  font-size: 10px;
+}
+
+.nav {
+  color: #ee7600;
+  font-family: 'Rubik', sans-serif;
+  font-size: 15px;
+  display: block;
+  float: right;
+  align: top;
+}
+/*
+.parent {
+
+}*/
