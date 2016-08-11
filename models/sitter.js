@@ -8,6 +8,7 @@ const SitterSchema = mongoose.Schema ({
   gender: {type: String, required: true},
   address: {type: String, required: true},
   birthday: {type: Date, required: true},
-  joindate: {type: Date, default: Date.now}
+  joindate: {type: Date, default: Date.now},
+  image: {type: String}
 })
 module.exports = mongoose.model('Sitter', SitterSchema)
