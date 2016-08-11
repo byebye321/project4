@@ -11,13 +11,13 @@ $(function() {
     response.sitters.forEach(function(sitter){
       console.log(sitter);
       var element = $(
-        "<div class='row sitter-hover' style='padding-top:10px;padding-bottom:10px'>" +
+        "<div class='row sitter-hover' id="+sitter._id+" style='padding-top:10px;padding-bottom:10px'>" +
           "<div class='col-md-2 col-md-offset-3' style='color:#272663'>" +
           "  <img src="+ sitter.image +" class='cute-girl' width='45px'/>" +
         "</div>" +
           "<div class='col-md-3' style='color:#272663;text-align:left;margin-left:-50px'>" +
             "<p style='font-size:24px'>" +
-              "<a href='/parent-sitter' style='color:#272663'>" + sitter.fullname + " </a>" +
+              "<a style='color:#272663'>" + sitter.fullname + " </a>" +
             "</p>" +
             "<p style='margin-top:-10px'>" +
             "  <i class='fa fa-star' aria-hidden='true'></i>" +
@@ -40,6 +40,14 @@ $(function() {
         "  </div>" +
         "</div>"
       )
+
+      $(element).on('click', function(chicken) {
+        var sitter_id =  chicken.target.closest(".sitter-hover").id
+
+        $.cookie("sitter-selected-id", sitter_id)
+
+        window.location.replace("/frontend/parent-sitter.html")
+      })
 
       $('#pokemon_row').append(element);
     })
