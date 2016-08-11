@@ -7,12 +7,13 @@
 		<link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400" rel="stylesheet">
 		<link rel="stylesheet" href="css/cute.css">
 
-		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery.cookie/jquery.cookie.js"></script>
 		<script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
-		<script type="text/javascript" src="js/parent.js"></script>
+		<script type="text/javascript" src="js/sitter-available.js"></script>
 	</head>
 
 	<body style="font-family: 'Rubik', sans-serif;">
@@ -46,7 +47,7 @@
           	<span class="input-group-addon" style="background-color:white">
           		<i class="fa fa-calendar" style="color:red"></i>
            	</span>
-         		<input placeholder="Sitters available on July 24th" type='text' class="form-control" style="max-width:305px" />
+         		<input id="searchbardate" type='text' class="form-control" style="max-width:305px" />
 
          		<button type="button" class="btn btn-primary" style="margin-left:-105px; padding-left:5px; padding-right:5px;border-radius:0px;background-color:#272663">
          			<span style="padding-left:5px;padding-right:5px;"><a style="color:white" href="/parent-sitter"> Find a sitter </a> </span>
@@ -63,162 +64,8 @@
       	</div>
 			</div>
 
-			<div class="container" style="padding-top:40px">
+			<div class="container" style="padding-top:40px" id="pokemon_row">
 
-				<!-- search result Row -->
-				<div class="row sitter-hover" style="padding-top:10px;padding-bottom:10px">
-					<div class="col-md-2 col-md-offset-3" style="color:#272663">
-						<img src="img/sitter/steph.jpg" class="cute-girl" width="45px"/>
-					</div>
-					<div class="col-md-3" style="color:#272663;text-align:left;margin-left:-50px">
-						<p style="font-size:24px">
-							<a href="/parent-sitter" style="color:#272663"> Jane Doh </a>
-						</p>
-						<p style="margin-top:-10px">
-							<i class="fa fa-star" aria-hidden="true"></i>
-							<span style="color:#FF4500">Experienced</span>
-							<span style="padding-left:25px">
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<span style="color:#FF4500">Reliable</span>
-							</span>
-						</p>
-					</div>
-					<div class="col-md-3" style="margin-left:-90px;">
-						<div style="background-color:white;min-width:80px;display:inline-block">
-							<span style="color:#FF4500;font-size:24px">48</span> <br/>
-							Reviews
-						</div>
-						<div style="background-color:white;min-width:80px;display:inline-block;margin-left:20px">
-							<span style="color:#FF4500;font-size:24px">99%</span> <br/>
-							Ratings
-						</div>
-					</div>
-				</div>
-				<!-- end of search result row -->
-
-				<!-- search result Row -->
-				<div class="row sitter-hover" style="padding-top:10px;padding-bottom:10px">
-					<div class="col-md-2 col-md-offset-3" style="color:#272663">
-						<img src="img/girls/1.jpeg" class="cute-girl" width="45px"/>
-					</div>
-					<div class="col-md-3" style="color:#272663;text-align:left;margin-left:-50px">
-						<p style="font-size:24px">
-							<a href="/parent-sitter" style="color:#272663"> Amanda Goh </a>
-						</p>
-						<p style="margin-top:-10px">
-							<i class="fa fa-star" aria-hidden="true"></i>
-							<span style="color:#FF4500">Responsive</span>
-							<span style="padding-left:25px">
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<span style="color:#FF4500">Reliable</span>
-							</span>
-						</p>
-					</div>
-					<div class="col-md-3" style="margin-left:-90px;">
-						<div style="background-color:white;min-width:80px;display:inline-block">
-							<span style="color:#FF4500;font-size:24px">11</span> <br/>
-							Reviews
-						</div>
-						<div style="background-color:white;min-width:80px;display:inline-block;margin-left:20px">
-							<span style="color:#FF4500;font-size:24px">92%</span> <br/>
-							Ratings
-						</div>
-					</div>
-				</div>
-				<!-- end of search result row -->
-
-				<!-- search result Row -->
-				<div class="row sitter-hover" style="padding-top:10px;padding-bottom:10px">
-					<div class="col-md-2 col-md-offset-3" style="color:#272663">
-						<img src="img/girls/2.jpeg" class="cute-girl" width="45px"/>
-					</div>
-					<div class="col-md-3" style="color:#272663;text-align:left;margin-left:-50px">
-						<p style="font-size:24px">
-							<a href="/parent-sitter" style="color:#272663"> Evon Tay</a>
-						</p>
-						<p style="margin-top:-10px">
-							<i class="fa fa-star" aria-hidden="true"></i>
-							<span style="color:#FF4500">Responsive</span>
-							<span style="padding-left:25px">
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<span style="color:#FF4500">Flexi Schedule</span>
-							</span>
-						</p>
-					</div>
-					<div class="col-md-3" style="margin-left:-90px;">
-						<div style="background-color:white;min-width:80px;display:inline-block">
-							<span style="color:#FF4500;font-size:24px">8</span> <br/>
-							Reviews
-						</div>
-						<div style="background-color:white;min-width:80px;display:inline-block;margin-left:20px">
-							<span style="color:#FF4500;font-size:24px">90%</span> <br/>
-							Ratings
-						</div>
-					</div>
-				</div>
-				<!-- end of search result row -->
-
-				<!-- search result Row -->
-				<div class="row sitter-hover" style="padding-top:10px;padding-bottom:10px">
-					<div class="col-md-2 col-md-offset-3" style="color:#272663">
-						<img src="img/girls/3.jpeg" class="cute-girl" width="45px"/>
-					</div>
-					<div class="col-md-3" style="color:#272663;text-align:left;margin-left:-50px">
-						<p style="font-size:24px">
-							<a href="/parent-sitter" style="color:#272663"> Amanda Tan</a>
-						</p>
-						<p style="margin-top:-10px">
-							<i class="fa fa-star" aria-hidden="true"></i>
-							<span style="color:#FF4500">Flexi Schedule</span>
-							<span style="padding-left:25px">
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<span style="color:#FF4500">Reliable</span>
-							</span>
-						</p>
-					</div>
-					<div class="col-md-3" style="margin-left:-90px;">
-						<div style="background-color:white;min-width:80px;display:inline-block">
-							<span style="color:#FF4500;font-size:24px">10</span> <br/>
-							Reviews
-						</div>
-						<div style="background-color:white;min-width:80px;display:inline-block;margin-left:20px">
-							<span style="color:#FF4500;font-size:24px">78%</span> <br/>
-							Ratings
-						</div>
-					</div>
-				</div>
-				<!-- end of search result row -->
-
-				<!-- search result Row -->
-				<div class="row sitter-hover" style="padding-top:10px;padding-bottom:10px">
-					<div class="col-md-2 col-md-offset-3" style="color:#272663">
-						<img src="img/girls/4.jpg" class="cute-girl" width="45px"/>
-					</div>
-					<div class="col-md-3" style="color:#272663;text-align:left;margin-left:-50px">
-						<p style="font-size:24px">
-							<a href="/parent-sitter" style="color:#272663"> Monica Ford</a>
-						</p>
-						<p style="margin-top:-10px">
-							<i class="fa fa-star" aria-hidden="true"></i>
-							<span style="color:#FF4500">Responsive</span>
-							<span style="padding-left:25px">
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<span style="color:#FF4500">Patient</span>
-							</span>
-						</p>
-					</div>
-					<div class="col-md-3" style="margin-left:-90px;">
-						<div style="background-color:white;min-width:80px;display:inline-block">
-							<span style="color:#FF4500;font-size:24px">12</span> <br/>
-							Reviews
-						</div>
-						<div style="background-color:white;min-width:80px;display:inline-block;margin-left:20px">
-							<span style="color:#FF4500;font-size:24px">65%</span> <br/>
-							Ratings
-						</div>
-					</div>
-				</div>
-				<!-- end of search result row -->
 			</div>
 		</div>
 

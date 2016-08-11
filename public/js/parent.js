@@ -35,7 +35,7 @@ $('#pokemon').append($(element).clone())
 $("#button").on('click', function(chicken){
 	var date = $('#date').val().split(' ')[0];
 	//
-	date = date.replace("-").replace("/", "-");
+	date = date.replace("/","-").replace("/", "-");
 
 	$.cookie("sitter-available-date", date);
 
