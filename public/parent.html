@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/cute.css">
 
 		<script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery.cookie/jquery.cookie.js"></script>
 		<script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
@@ -55,9 +56,9 @@
           	<span class="input-group-addon" style="background-color:white">
           		<i class="fa fa-calendar" style="color:red"></i>
            	</span>
-         		<input placeholder="I need a babysitter on..." type='text' class="form-control" style="max-width:305px" />
-         		<button type="button" class="btn btn-primary" style="margin-left:-105px; padding-left:5px; padding-right:5px;border-radius:0px;background-color:#272663">
-         			<span style="padding-left:5px;padding-right:5px;"><a style="color:white" href="/sitter-available"> Find a sitter </a> </span>
+         		<input id="date" placeholder="I need a babysitter on..." type='text' class="form-control" style="max-width:305px" />
+         		<button type="button" id="button" class="btn btn-primary" style="margin-left:-105px; padding-left:5px; padding-right:5px;border-radius:0px;background-color:#272663">
+         			<span style="padding-left:5px;padding-right:5px;"><a style="color:white"> Find a sitter </a> </span>
          		</button>
         	</div>
 
@@ -96,7 +97,7 @@
 		</div>
 		<!-- End of how it works -->
 
-		<!-- Start of sitters available now it works -->
+		<!-- Start of sitters available now -->
 		<div style="background-color:#ECECF6; min-height:370px; margin-top:-20px; text-align:center">
 
 			<p style="padding-top:20px;color:#272663;font-size:32px;font-weight:700">
@@ -104,11 +105,6 @@
 			</p>
 
 			<div class="row" id="pokeball">
-
-
-
-
-
 
 			</div>
 
@@ -123,65 +119,9 @@
 			</p>
 
 				<!-- Sitters each -->
-				<div class="col-md-3">
-					<div class="margin:10px;">
-						<img src="img/girls/5.jpeg" class="cute-girl"  width="170px" height="170px"/>
-					</div>
-
-					<div class="row" style="padding-top:5px">
-						<div class="col-md-6 col-md-offset-2" style="color:#272663"> Halimah, 39 </div>
-
-						<div class="col-md-3" style="border-left:1px solid black; padding-left:0px; margin-left:-15px">
-							91% <br /> <span style="font-size:8px"> rating </span>
-						</div>
-					</div>
-				</div> <!-- end sitter -->
-
-				<!-- Sitters each -->
-				<div class="col-md-3">
-					<div class="margin:10px;">
-						<img src="img/girls/6.jpg" class="cute-girl"  width="170px" height="170px"/>
-					</div>
-
-					<div class="row" style="padding-top:5px">
-						<div class="col-md-6 col-md-offset-2" style="color:#272663"> Harriet Doh, 24 </div>
-
-						<div class="col-md-3" style="border-left:1px solid black; padding-left:0px; margin-left:-15px">
-							92% <br /> <span style="font-size:8px"> rating </span>
-						</div>
-					</div>
-				</div> <!-- end sitter -->
-
-				<!-- Sitters each -->
-				<div class="col-md-3">
-					<div class="margin:10px;">
-						<img src="img/girls/7.jpeg" class="cute-girl"  width="170px" height="170px"/>
-					</div>
-
-					<div class="row" style="padding-top:5px">
-						<div class="col-md-6 col-md-offset-2" style="color:#272663"> Mandy Alice, 27 </div>
-
-						<div class="col-md-3" style="border-left:1px solid black; padding-left:0px; margin-left:-15px">
-							95% <br /> <span style="font-size:8px"> rating </span>
-						</div>
-					</div>
-				</div> <!-- end sitter -->
-
-				<!-- Sitters each -->
-				<div class="col-md-3">
-					<div class="margin:10px;">
-						<img src="img/girls/8.jpeg" class="cute-girl"  width="170px" height="170px"/>
-					</div>
-
-					<div class="row" style="padding-top:5px">
-						<div class="col-md-6 col-md-offset-2" style="color:#272663"> Monica Ford, 22 </div>
-
-						<div class="col-md-3" style="border-left:1px solid black; padding-left:0px; margin-left:-15px">
-							97% <br /> <span style="font-size:8px"> rating </span>
-						</div>
-					</div>
-				</div> <!-- end sitter -->
-		</div>
+				<div class="row" id="pokemon">
+				</div>
+	</div>
 
 
 	</body>
