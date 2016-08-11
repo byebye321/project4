@@ -19,7 +19,7 @@ var data = [
     model: 'Sitter',
     documents: [
     {
-      username: 'pokemon',
+      username: 'Krystal',
       password: 'pokemon',
       fullname: 'Krystal Loft',
       email: 'hello@gmail.com',
