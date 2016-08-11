@@ -53,7 +53,7 @@ function getSitterAvailability (req, res) {
 		//list of sitter will contain the list of sitter id booked during this date
 		var listOfSitterBooked = [];
   	bookings.forEach(function(booking) {
-  		listOfSitterBooked.push(booking.sitter_id);
+  		listOfSitterBooked.push(booking.sitter_id.toString().trim());
   	})
 
 		//get all the sitters
@@ -64,7 +64,7 @@ function getSitterAvailability (req, res) {
       } else {
         //filtered sitter will contain sitters that aren't booked at this date
   			filteredSitters = sitters.filter(function(sitter) {
-  				return listOfSitterBooked.indexOf(sitter._id) > 0;
+  				return listOfSitterBooked.indexOf(sitter._id.toString()) < 0;
   			})
   			res.status(200).json({sitters: filteredSitters})
       }
